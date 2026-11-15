@@ -553,7 +553,7 @@ function KeySys.authenticate()
 		BorderSizePixel = 0,
 		ClearTextOnFocus = false,
 		Font = Enum.Font.GothamMedium,
-		PlaceholderText = "Enter key..."	
+		PlaceholderText = "Enter key...",
 		PlaceholderColor3 = gatePalette.muted,
 		Text = "",
 		TextColor3 = gatePalette.text,
