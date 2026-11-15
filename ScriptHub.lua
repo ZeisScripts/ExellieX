@@ -624,7 +624,7 @@ function KeySys.authenticate()
 		Size = UDim2.fromOffset(384, 26),
 		BackgroundTransparency = 1,
 		Font = Enum.Font.GothamMedium,
-		Text = hasServer and "Click GET KEY to copy the key link, open it in your browser, and paste your key." or "Keys are checked offline. Ask the owner if yours expired.",
+		Text = hasServer and "Press Get Key to copy the link, then paste the link in your browser and get the key.""
 		TextSize = 8,
 		TextColor3 = gatePalette.muted,
 		TextWrapped = true,
@@ -633,7 +633,7 @@ function KeySys.authenticate()
 
 	if stored then
 		box.Text = stored
-		status.Text = "saved key no longer works - enter a new one"
+		status.Text = "Saved Key No Longer Works - Enter a New One"
 		status.TextColor3 = gatePalette.danger
 	end
 
@@ -657,7 +657,7 @@ function KeySys.authenticate()
 			result = info
 			return
 		end
-		status.Text = string.upper(tostring(reason or "invalid key"))
+		status.Text = string.upper(tostring(reason or "Invalid key"))
 		status.TextColor3 = gatePalette.danger
 		shake()
 	end
@@ -725,8 +725,8 @@ function KeySys.authenticate()
 	return result
 end
 
-local SESSION = { tier = "key", key = "KEYLESS" }
-local OWNER_MODE = false
+local SESSION = KeySys.authenticate()
+local OWNER_MODE = SESSION and SESSION.tier == "owner" or false
 
 local L = {
 	bg = Color3.fromRGB(7, 8, 12),
