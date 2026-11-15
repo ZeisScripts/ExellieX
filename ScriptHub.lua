@@ -417,7 +417,7 @@ end
 function KeySys.setOwnerKey(newKey)
 	local value = compact(newKey)
 	if #value < 4 then
-		return false, "Denied
+		return false, "Denied"
 	end
 	if not writeStore(OWNER_FILE, hash(OWNER_SALT .. value)) then
 		return false, "this executor cannot store files"
